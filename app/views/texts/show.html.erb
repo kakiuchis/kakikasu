@@ -1,14 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @text.title %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @text.content %>
-</p>
+<h1><%= @text.title %></h1>
+<%= movie(@text.url) if @text.url.present? %>
+<%= markdown(@text.content) %>
 
 <%= link_to 'Edit', edit_text_path(@text) %> |
 <%= link_to 'Back', texts_path %>

@@ -53,6 +53,6 @@ class TextsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def text_params
-      params.require(:text).permit(:title, :content)
+      params.require(:text).permit(:title, :content, :url)
     end
 end
