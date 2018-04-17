@@ -3,13 +3,13 @@
 <h1><%= @text.title %></h1>
 
 <div class="movie-wrap">
-  <%= movie(@text.url) if @text.url.present? %>
+  <%= movie(@text.youtube_code) if @text.youtube_code.present? %>
 </div>
 
 <%= markdown(@text.content) %>
 
 <div class="slide-wrap">
-  <%= slide("https://www.slideshare.net/shusukekakiuchi/ai-72319150") %>
+  <%= slide(@text.slideshare_url) if @text.slideshare_url.present? %>
 </div>
 
 <%= link_to 'Edit', edit_text_path(@text) %> |
