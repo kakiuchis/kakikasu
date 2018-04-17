@@ -2,12 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$small:  "only screen and (max-width:560px)";
+$small:  "only screen and (max-width:706px)";
 
 @media #{$small} {
   .movie-wrap {
     position: relative;
     padding-bottom: 56.25%;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .slide-wrap {
+    position: relative;
+    padding-bottom: 85.53%;
 
     iframe {
       position: absolute;

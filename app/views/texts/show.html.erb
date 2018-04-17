@@ -1,10 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <h1><%= @text.title %></h1>
+
 <div class="movie-wrap">
   <%= movie(@text.url) if @text.url.present? %>
 </div>
+
 <%= markdown(@text.content) %>
+
+<div class="slide-wrap">
+  <%= slide("https://www.slideshare.net/shusukekakiuchi/ai-72319150") %>
+</div>
 
 <%= link_to 'Edit', edit_text_path(@text) %> |
 <%= link_to 'Back', texts_path %>
