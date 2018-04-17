@@ -9,6 +9,8 @@ module ApplicationHelper
       case language.to_s
       when 'rb'
         lang = 'ruby'
+      when 'py'
+        lang = 'python'
       when 'yml'
         lang = 'yaml'
       when 'css'
@@ -45,7 +47,7 @@ module ApplicationHelper
   def movie(url)
     iframe = content_tag(
       :iframe,
-      '', # empty body
+      '',
       width: 560,
       height: 315,
       src: "https://www.youtube.com/embed/#{url}?rel=0",
