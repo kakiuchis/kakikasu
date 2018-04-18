@@ -2,9 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$small:  "only screen and (max-width:706px)";
+$small:  "only screen and (max-width:640px)";
+
+p {
+  a{
+    img{
+      width: 560px;
+    }
+  }
+}
 
 @media #{$small} {
+  p {
+	a{
+	  img{
+	    width: 100%;
+	  }
+	}
+  }
   .movie-wrap {
     position: relative;
     padding-bottom: 56.25%;
