@@ -14,12 +14,17 @@ p {
 
 @media #{$small} {
   p {
-	a{
-	  img{
-	    width: 100%;
-	  }
-	}
+    a {
+      img {
+        width: 100%;
+      }
+    }
   }
+
+  .navbar-brand {
+    font-size: 10px;
+  }
+
   .movie-wrap {
     position: relative;
     padding-bottom: 56.25%;
