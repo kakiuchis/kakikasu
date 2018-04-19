@@ -7,7 +7,8 @@ class Ability
       can :access, :rails_admin
       can :manage, :all
     elsif user.member?
-      can :read, :all
+      can :read, Text
+      can [:new, :create], Inquiry
     end
   end
 end
