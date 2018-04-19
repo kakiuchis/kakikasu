@@ -1,4 +1,5 @@
 class TextsController < ApplicationController
+  authorize_resource
   before_action :set_text, only: [:show, :edit, :update, :destroy]
 
   # GET /texts
