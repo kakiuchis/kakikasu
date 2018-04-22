@@ -31,12 +31,13 @@
         </div>
       </div>
     </nav>
+    <%= flash[:notice] %><%= flash[:alert] %>
     <% if user_signed_in? %>
       <p>勉強順調ですか！<%= current_user.email %>さん！テキスト更新したらメール通知いたします！</p>
     <% else %>
       <p><%= link_to 'よかったら新規登録してみてください。テキスト更新情報をメールでお知らせします！', new_user_registration_path %></p>
     <% end %>
-    <p class="flash"><%= notice %><%= alert %></p>
+
     <%= yield %>
   </body>
 </html>
