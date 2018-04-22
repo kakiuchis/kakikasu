@@ -17,6 +17,7 @@ gem 'coderay'
 gem 'devise'
 gem 'cancancan'
 gem 'rails_admin'
+gem 'dotenv-rails'
 
 
 group :development, :test do

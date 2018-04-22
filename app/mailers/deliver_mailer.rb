@@ -5,12 +5,12 @@ class DeliverMailer < ApplicationMailer
   #
   #   en.deliver_mailer.announcement.subject
   #
-  default from: "noreply@kakikasu.herokuapp.com"
+  default from: ENV['SERVICE_ADDRESS']
 
   def announcement(announcement)
     @announcement = announcement
 
-    mail to: "noreply@kakikasu.herokuapp.com",
+    mail to: ENV['SERVICE_ADDRESS'],
       bcc: User.pluck(:email),
       subject: announcement.title
   end
