@@ -1,4 +1,5 @@
 class AnnouncementsController < ApplicationController
+  authorize_resource
   before_action :set_announcement, only: [:show, :edit, :update, :destroy]
 
   # GET /announcements
