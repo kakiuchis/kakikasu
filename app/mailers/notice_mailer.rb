@@ -12,7 +12,6 @@ class NoticeMailer < ApplicationMailer
 
     mail to: inquiry.email,
       bcc: User.where(role: "admin").pluck(:email),
-            subject: "【カキカス】お問い合わせありがとうございます！"
-        end
-      end
-      )
+      subject: "【カキカス】お問い合わせありがとうございます！"
+  end
+end

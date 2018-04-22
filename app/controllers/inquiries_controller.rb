@@ -29,6 +29,7 @@ class InquiriesController < ApplicationController
     @inquiry = Inquiry.new(inquiry_params)
 
     if @inquiry.save
+      NoticeMailer.sendmail_inquiry(@inquiry).deliver
       redirect_to root_path, notice: 'Inquiry was successfully created.'
     else
       render :new
