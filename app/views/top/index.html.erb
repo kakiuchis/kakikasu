@@ -1,0 +1,19 @@
+<section class="main-header">
+  <%= image_tag("title.png") %>
+</section>
+<section class="about">
+  <h2><b>カキカスとは？</b></h2>
+  <p><b>「カッキーのカスでもできるAIプログラミング」の略です。</b></p>
+  <p><b>数学なんてわからない！難しいのいやだ！</br>そんなあなたでも、AIプログラミングできるようになるかもしれません！</b></p>
+  <div class="movie-wrap">
+    <%= movie("RBRXeo4GF4s") %>
+  </div>
+</section>
+<section class="menu">
+  <%= link_to 'ログイン', new_user_session_path, class: "btn btn-info btn btn-block" unless user_signed_in? %>
+  <%= link_to "テキスト一覧へ", texts_path, class: "btn btn-info btn btn-block" %>
+  <%= link_to "問い合わせ", new_inquiry_path, class: "btn btn-info btn btn-block" %>
+  <%= link_to 'ユーザ一覧', users_index_path, class: "btn btn-info btn btn-block" if user_signed_in? && current_user.role == "admin" %>
+  <%= link_to 'メール配信', announcements_path, class: "btn btn-info btn btn-block" if user_signed_in? && current_user.role == "admin" %>
+  <%= link_to "#{current_user.email}からログアウト", destroy_user_session_path, method: :delete, class: "btn btn-info btn btn-block" if user_signed_in? %>
+</section>
