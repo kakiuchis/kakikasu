@@ -32,17 +32,39 @@
         </div>
       </div>
     </nav>
-    <div id="notice">
-      <%= flash[:notice] %>
-    </div>
-    <div id="alert">
-      <%= flash[:alert] %>
-    </div>
+    
+    <% flash.each do |name, msg| %>
+      <div class="alert alert-success" role="alert">
+        <a class="close" data-dismiss="alert">×</a>
+        <%= msg %>
+      </div>
+    <% end %>
 
     <%= yield %>
 
     <footer>
       <p>© 2018 Copyright Shusuke Kakiuchi</p>
     </footer>
+
+    <a href="#" class="topBtn" id="topBtn">TOP</a>
+    <script>
+      $(document).ready(function(){
+        $("#topBtn").hide();
+        $(window).on("scroll", function(){
+          if($(this).scrollTop() > 100){
+            $("#topBtn").fadeIn("fast");
+          }
+          else{
+            $("#topBtn").fadeOut("fast");
+          }
+        });
+        $('#topBtn').click(function(){
+          $('body,html').animate({
+            scrollTop: 0
+          }, 400); 
+            return false;
+        });
+      });
+    </script>
   </body>
 </html>
