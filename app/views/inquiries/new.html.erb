@@ -1,5 +1,16 @@
-<h1>New Inquiry</h1>
+<div class="row">
+  <div class="col-xs-12 col-sm-offset-2 col-sm-8">
+    <div class="content">
+      <div class="discription">
+        <h1>カッキーに問い合わせ</h1>
+        <p>テキストの質問、修正依頼など、ご連絡お待ちしております。</p>
+        <p>講演依頼なども承ります！</p>
+      </div>
+      <%= render 'form', inquiry: @inquiry %>
+      <div class="menu">
+        <%= link_to "テキスト一覧へ", texts_path, class: "btn btn-info btn btn-block" %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= render 'form', inquiry: @inquiry %>
-
-<%= link_to 'Back', inquiries_path %>
