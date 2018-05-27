@@ -1,19 +1,27 @@
-<section class="main-header">
-  <%= image_tag("title.png") %>
-</section>
-<section class="about">
-  <h1><b>カキカスとは？</b></h1>
-  <p><b>「カッキーのカスでもできるAIプログラミング」の略です。</b></p>
-  <p><b>数学なんてわからない！難しいのいやだ！</br>そんなあなたでも、AIプログラミングできるようになるかもしれません！</b></p>
-  <div class="movie-wrap">
-    <%= movie("RBRXeo4GF4s") %>
+<div class="row">
+  <div class="col-xs-12 col-sm-offset-2 col-sm-8">
+    <section class="main-header">
+      <%= image_tag("title.png") %>
+    </section>
+    <div class="content">
+      <div class="about">
+        <h1>カキカスとは？</h1>
+        <p>「カッキーのカスでもできるAIプログラミング」の略です。</p>
+        <p>数学なんてわからない！難しいのいやだ！</br>そんなあなたでも、AIプログラミングできるようになるかもしれません！</p>
+      </div>
+      <div class="movie-wrap">
+        <%= movie("RBRXeo4GF4s") %>
+      </div>
+      <div class="menu">
+        <%= link_to 'ログイン', new_user_session_path, class: "btn btn-info btn btn-block" unless user_signed_in? %>
+        <%= link_to "テキスト一覧へ", texts_path, class: "btn btn-info btn btn-block" %>
+        <%= link_to "問い合わせ", new_inquiry_path, class: "btn btn-info btn btn-block" %>
+        <%= link_to 'ユーザ一覧', users_index_path, class: "btn btn-info btn btn-block" if user_signed_in? && current_user.role == "admin" %>
+        <%= link_to 'メール配信', announcements_path, class: "btn btn-info btn btn-block" if user_signed_in? && current_user.role == "admin" %>
+        <%= link_to "#{current_user.email}からログアウト", destroy_user_session_path, method: :delete, class: "btn btn-info btn btn-block" if user_signed_in? %>
+      </div>
+    </div>
   </div>
-</section>
-<section class="menu">
-  <%= link_to 'ログイン', new_user_session_path, class: "btn btn-info btn btn-block" unless user_signed_in? %>
-  <%= link_to "テキスト一覧へ", texts_path, class: "btn btn-info btn btn-block" %>
-  <%= link_to "問い合わせ", new_inquiry_path, class: "btn btn-info btn btn-block" %>
-  <%= link_to 'ユーザ一覧', users_index_path, class: "btn btn-info btn btn-block" if user_signed_in? && current_user.role == "admin" %>
-  <%= link_to 'メール配信', announcements_path, class: "btn btn-info btn btn-block" if user_signed_in? && current_user.role == "admin" %>
-  <%= link_to "#{current_user.email}からログアウト", destroy_user_session_path, method: :delete, class: "btn btn-info btn btn-block" if user_signed_in? %>
-</section>
+</div>
+
+

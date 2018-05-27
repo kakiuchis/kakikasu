@@ -1,101 +1,160 @@
+/* スマホの時のBrandのフォント */
+
+
 /* navbar 全体の背景色とボーダーカラー */
 .navbar-default {
-background-color: #65baad;
-border-color: #ffffff;
+  background-color: #65baad;
+  border-color: #ffffff;
 }
+
 /* navbar テキストカラー */
 .navbar-default .navbar-nav > li > a {
-color: #ffffff;
+  color: #ffffff;
 }
+
 /* navbar hover,focus時のテキストカラー */
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-color: #26534c;
-background-color: transparent;
+  color: #26534c;
+  background-color: transparent;
 }
+
 /* navbar active設定時のカラー */
 .navbar-default .navbar-nav>.active>a,
 .navbar-default .navbar-nav>.active>a:focus,
 .navbar-default .navbar-nav>.active>a:hover {
-color: #26534c;
-background-color: #c3ede7;
+  color: #26534c;
+  background-color: #c3ede7;
 }
+
 /* navbar ドロップダウン(親)のカラー */
 .navbar-default .navbar-nav>.open>a,
 .navbar-default .navbar-nav>.open>a:focus,
 .navbar-default .navbar-nav>.open>a:hover {
-color: #3e6962;
-background-color: #c3ede7;
+  color: #3e6962;
+  background-color: #c3ede7;
 }
+
 /* navbar ドロップダウン(子)のボックスカラー */
 .dropdown-menu {
-background-color: #65baad;
-border: 1px solid #3e6962;
-border: 1px solid #3e6962(0, 0, 0, .15);
--webkit-box-shadow: 0 6px 12px rgba(94, 136, 129, 0.35);
-box-shadow: 0 6px 12px rgba(94, 136, 129, 0.35);
+  background-color: #65baad;
+  border: 1px solid #3e6962;
+  border: 1px solid #3e6962(0, 0, 0, .15);
+  -webkit-box-shadow: 0 6px 12px rgba(94, 136, 129, 0.35);
+  box-shadow: 0 6px 12px rgba(94, 136, 129, 0.35);
 }
+
 /* navbar ドロップダウン(子)テキストカラー */
 .dropdown-menu>li>a {
-color: #ffffff;
+  color: #ffffff;
 }
+
 /* navbar ドロップダウン(子)focus,hover時のカラー */
 .dropdown-menu>li>a:focus,
 .dropdown-menu>li>a:hover {
-color: #26534c;
-background-color: #c3ede7;
+  color: #26534c;
+  background-color: #c3ede7;
 }
+
 /* navbar ドロップダウン(子)内の区切り線(class=”divider”)のカラー */
 .dropdown-menu .divider {
-background-color: #3e6962;
+  background-color: #3e6962;
 }
+
 /* navbar 画面サイズ767px以下の時のカラー */
 @media (max-width:767px) {
-.navbar-default .navbar-nav .open .dropdown-menu>li>a {
-color: #ffffff;
+  .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+    color: #ffffff;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu>li>a:focus,
+  .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover {
+  color: #26534c;
+  background-color: transparent;
+  }
+
+  /* ドロップダウンactive設定時のカラー */
+  .navbar-default .navbar-nav .open .dropdown-menu>.active>a,
+  .navbar-default .navbar-nav .open .dropdown-menu>.active>a:focus,
+  .navbar-default .navbar-nav .open .dropdown-menu>.active>a:hover {
+    color: #ffb163;
+    background-color: #d4ede9;
+  }
 }
-.navbar-default .navbar-nav .open .dropdown-menu>li>a:focus,
-.navbar-default .navbar-nav .open .dropdown-menu>li>a:hover {
-color: #26534c;
-background-color: transparent;
-}
-/* ドロップダウンactive設定時のカラー */
-.navbar-default .navbar-nav .open .dropdown-menu>.active>a,
-.navbar-default .navbar-nav .open .dropdown-menu>.active>a:focus,
-.navbar-default .navbar-nav .open .dropdown-menu>.active>a:hover {
-color: #ffb163;
-background-color: #d4ede9;
-}
-}
+
 /* navbar ハンバーガー四角枠 */
 .navbar-default .navbar-toggle {
-border-color: #ffffff;
+  border-color: #ffffff;
 }
+
 /* navbar ハンバーガー三本線 */
 .navbar-default .navbar-toggle .icon-bar {
-background-color: #ffffff;
+  background-color: #ffffff;
 }
+
 /* navbar ハンバーガーボタン,タップとホバーした時の背景色 */
 .navbar-default .navbar-toggle:focus,
 .navbar-default .navbar-toggle:hover {
-background-color: #ffffff;
+  background-color: #ffffff;
 }
+
 /* navbar ハンバーガーボタン,タップとホバーした時の四角枠 */
 .navbar-default .navbar-toggle:focus,
 .navbar-default .navbar-toggle:hover {
-border-color: #65baad;
+  border-color: #65baad;
 }
+
 /* navbar ハンバーガーボタン,タップとホバーした時の三本線 */
 .navbar-default .navbar-toggle:focus > .icon-bar,
 .navbar-default .navbar-toggle:hover > .icon-bar {
-background-color: #65baad;
+  background-color: #65baad;
 }
+
 /* navbar Brandのカラー */
 .navbar-default .navbar-brand {
-color: #ffffff;
+  color: #ffffff;
 }
+
 .navbar-default .navbar-brand:focus,
 .navbar-default .navbar-brand:hover {
-color: #ffffff;
-background-color: transparent;
+  color: #ffffff;
+  background-color: transparent;
 }
+
+/* ずっとハンバーガー */
+@media (max-width: 10000px) {
+  .navbar-header {
+    float: none;
+  }
+  .navbar-toggle {
+    display: block;
+  }
+  .navbar-collapse {
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+  .navbar-collapse.collapse {
+    display: none!important;
+  }
+  .navbar-nav {
+    float: none!important;
+    margin: 7.5px -15px;
+  }
+  .navbar-nav>li {
+    float: none;
+  }
+  .navbar-nav>li>a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .navbar-text {
+    float: none;
+    margin: 15px 0;
+  }
+  .navbar-collapse.collapse.in {
+    display: block!important;
+  }
+  .collapsing {
+    overflow: hidden!important;
+  }
+}
+

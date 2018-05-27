@@ -1,5 +1,3 @@
-$small:  "only screen and (max-width:640px)";
-
 html {
   position: relative;
   min-height: 100%;
@@ -13,120 +11,55 @@ body {
 }
 
 .main-header {
-  background-color: transparent;
-  padding-top: 0%;
-  padding-bottom: 0%;
+  margin-bottom: 5%;
   width: 100%;
 }
 
 .main-header img {
-  display: block;
-  margin: 0 auto;
   width: 100%;
-  max-width: 560px;
+  //max-width: 700px;
+}
+
+.content {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 5%;
+  margin-bottom: 5%;
 }
 
 .about {
-  background-color: transparent;
-  padding-bottom: 5%;
-  b {
-    color: #555;
-  }
-  .movie-wrap {
-    padding-top: 5%;
+  text-align: left;
+  color: rgba(70, 70, 70, 1);
+  margin-bottom: 5%;
+}
+
+.movie-wrap {
+  position: relative;
+  padding-top: 0%;
+  padding-bottom: 56.25%;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 }
 
 .menu {
-  background-color: transparent;
-  padding-bottom: 5%;
+  margin-top: 5%;
   .btn {
     margin: auto;
     margin-bottom: 10px;
-    max-width: 560px;
   }
 }
 
 footer {
   width: 100%;
-  background-color: rgba(111, 111, 111,0.5);
+  background-color: rgba(111, 111, 111, 0.5);
   padding: 20px;
   color: white;
   padding-bottom: 10px;
 }
 
-@media #{$small} {
-  .navbar-brand {
-  font-size: 10px;
-  }
-}
 
-@media (max-width: 2000px) {
-  .navbar-header {
-    float: none;
-  }
-  .navbar-toggle {
-    display: block;
-  }
-  .navbar-collapse {
-    border-top: 1px solid transparent;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
-  }
-  .navbar-collapse.collapse {
-    display: none!important;
-  }
-  .navbar-nav {
-    float: none!important;
-    margin: 7.5px -15px;
-  }
-  .navbar-nav>li {
-    float: none;
-  }
-  .navbar-nav>li>a {
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-  .navbar-text {
-    float: none;
-    margin: 15px 0;
-  }
-  .navbar-collapse.collapse.in {
-    display: block!important;
-  }
-  .collapsing {
-    overflow: hidden!important;
-  }
-}
-
-.topBtn {
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  display:block;
-  background-color:rgba(0,0,0,0.5);
-  color:#fff;
-  text-decoration:none;
-  font-weight:bold;
-  font-size:11px;
-  width:60px;
-  height:60px;
-  text-align:center;
-  line-height:22px;
-  border-radius:30px;
-  padding-top:30px;
-  box-sizing:border-box;
-}
-
-.topBtn:before {
-  content:'\25B2';
-  position:absolute;
-  top:10px;
-  left:0;
-  width:100%;
-  text-align:center;
-  font-size:20px;
-}
-
-.topBtn:hover {
-  opacity:0.7;
-}
