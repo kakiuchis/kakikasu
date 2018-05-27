@@ -77,7 +77,7 @@ h1 {
   p {
     color: rgba(0, 0, 0, 1);
     line-height: 2;
-    margin: 0px 10px 20px 10px;
+    margin: 0px 0px 20px 0px;
   }
   ul {
     margin-bottom: 15px;
@@ -85,6 +85,9 @@ h1 {
     li {
       line-height: 2;
     }
+  }
+  img {
+    width: 100%;
   }
   .CodeRay {
     .code {

@@ -1,12 +1,14 @@
 /* navbar 全体の背景色とボーダーカラー */
 .navbar-default {
-  background-color: #65baad;
+  background-color: rgba(101, 186, 186, 0.5);
   border-color: #ffffff;
 }
 
 /* navbar テキストカラー */
 .navbar-default .navbar-nav > li > a {
   color: #ffffff;
+  font-weight: 700;
+  font-size: 15px;
 }
 
 /* navbar hover,focus時のテキストカラー */
@@ -21,7 +23,7 @@
 .navbar-default .navbar-nav>.active>a:focus,
 .navbar-default .navbar-nav>.active>a:hover {
   color: #26534c;
-  background-color: #c3ede7;
+  background-color: rgba(195, 237, 237, 0.5);
 }
 
 /* navbar ドロップダウン(親)のカラー */
@@ -29,12 +31,12 @@
 .navbar-default .navbar-nav>.open>a:focus,
 .navbar-default .navbar-nav>.open>a:hover {
   color: #3e6962;
-  background-color: #c3ede7;
+  background-color: rgba(195, 237, 237, 0.5);
 }
 
 /* navbar ドロップダウン(子)のボックスカラー */
 .dropdown-menu {
-  background-color: #65baad;
+  background-color: rgba(101, 186, 186, 0.5);
   border: 1px solid #3e6962;
   border: 1px solid #3e6962(0, 0, 0, .15);
   -webkit-box-shadow: 0 6px 12px rgba(94, 136, 129, 0.35);
@@ -50,7 +52,7 @@
 .dropdown-menu>li>a:focus,
 .dropdown-menu>li>a:hover {
   color: #26534c;
-  background-color: #c3ede7;
+  background-color: rgba(195, 237, 237, 0.5);
 }
 
 /* navbar ドロップダウン(子)内の区切り線(class=”divider”)のカラー */
@@ -74,7 +76,7 @@
   .navbar-default .navbar-nav .open .dropdown-menu>.active>a:focus,
   .navbar-default .navbar-nav .open .dropdown-menu>.active>a:hover {
     color: #ffb163;
-    background-color: #d4ede9;
+    background-color: rgba(212, 237, 237, 0.5);
   }
 }
 
@@ -97,23 +99,25 @@
 /* navbar ハンバーガーボタン,タップとホバーした時の四角枠 */
 .navbar-default .navbar-toggle:focus,
 .navbar-default .navbar-toggle:hover {
-  border-color: #65baad;
+  border-color: rgba(101, 186, 186, 0.5);
 }
 
 /* navbar ハンバーガーボタン,タップとホバーした時の三本線 */
 .navbar-default .navbar-toggle:focus > .icon-bar,
 .navbar-default .navbar-toggle:hover > .icon-bar {
-  background-color: #65baad;
+  background-color: rgba(101, 186, 186, 0.5);
 }
 
 /* navbar Brandのカラー */
 .navbar-default .navbar-brand {
+  font-weight: 700;
+  font-size: 25px;
   color: #ffffff;
 }
 
 .navbar-default .navbar-brand:focus,
 .navbar-default .navbar-brand:hover {
-  color: #ffffff;
+  color: #26534c;
   background-color: transparent;
 }
 
