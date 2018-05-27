@@ -1,17 +1,30 @@
-<h1><%= @text.title %></h1>
+<div class="row">
+  <div class="col-xs-12 col-sm-offset-2 col-sm-8">
+  	<div class="content">
+  	  <div class="text_title">
+        <h1><%= @text.title %></h1>
 
-<div class="movie-wrap">
-  <%= movie(@text.youtube_code) if @text.youtube_code.present? %>
+      </div>
+
+      <div class="movie-wrap">
+        <%= movie(@text.youtube_code) if @text.youtube_code.present? %>
+      </div>
+
+      <div class="text_content">
+        <%= markdown(@text.content) %>
+      </div>
+
+      <div class="slide-wrap">
+        <%= slide(@text.slideshare_url) if @text.slideshare_url.present? %>
+      </div>
+
+      <div class="menu">
+        <%= link_to 'Edit', edit_text_path(@text), class: "btn btn-success btn btn-block" if user_signed_in? && current_user.role == "admin" %>
+        <%= link_to 'Destroy', @text, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn btn-block" if user_signed_in? && current_user.role == "admin" %>
+        <%= link_to "カッキーに質問", new_inquiry_path, class: "btn btn-info btn btn-block" %>
+        <%= link_to 'テキスト一覧へ戻る', texts_path, class: "btn btn-info btn btn-block" %>
+      </div>
+	</div>
+  </div>
 </div>
 
-<%= markdown(@text.content) %>
-
-<div class="slide-wrap">
-  <%= slide(@text.slideshare_url) if @text.slideshare_url.present? %>
-</div>
-
-<section class="menu">
-  <%= link_to 'Edit', edit_text_path(@text), class: "btn btn-success btn btn-block" if user_signed_in? && current_user.role == "admin" %>
-  <%= link_to 'Destroy', @text, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn btn-block" if user_signed_in? && current_user.role == "admin" %>
-  <%= link_to 'テキスト一覧へ', texts_path, class: "btn btn-info btn btn-block" %>
-</section>

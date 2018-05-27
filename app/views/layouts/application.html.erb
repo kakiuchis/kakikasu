@@ -25,7 +25,7 @@
           <ul class="nav navbar-nav">            
             <li><%= link_to 'ログイン', new_user_session_path unless user_signed_in? %></li>
             <li><%= link_to "テキスト一覧", texts_path %></li>
-            <li><%= link_to "問い合わせ", new_inquiry_path %></li>
+            <li><%= link_to "カッキーに問い合わせ", new_inquiry_path %></li>
             <li><%= link_to 'ユーザ一覧', users_index_path if user_signed_in? && current_user.role == "admin" %></li>
             <li><%= link_to 'メール配信', announcements_path if user_signed_in? && current_user.role == "admin" %></li>
             <li><%= link_to "#{current_user.email}からログアウト", destroy_user_session_path, method: :delete if user_signed_in? %></li>
@@ -44,10 +44,6 @@
       <% end %>
       <%= yield %>
     </div>
-
-    <footer>
-      <p>© 2018 Copyright Shusuke Kakiuchi</p>
-    </footer>
 
     <a href="#" class="topBtn" id="topBtn">TOP</a>
     <script>

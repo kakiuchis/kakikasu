@@ -15,7 +15,7 @@
       <div class="menu">
         <%= link_to 'ログイン', new_user_session_path, class: "btn btn-info btn btn-block" unless user_signed_in? %>
         <%= link_to "テキスト一覧へ", texts_path, class: "btn btn-info btn btn-block" %>
-        <%= link_to "問い合わせ", new_inquiry_path, class: "btn btn-info btn btn-block" %>
+        <%= link_to "カッキーに問い合わせ", new_inquiry_path, class: "btn btn-info btn btn-block" %>
         <%= link_to 'ユーザ一覧', users_index_path, class: "btn btn-info btn btn-block" if user_signed_in? && current_user.role == "admin" %>
         <%= link_to 'メール配信', announcements_path, class: "btn btn-info btn btn-block" if user_signed_in? && current_user.role == "admin" %>
         <%= link_to "#{current_user.email}からログアウト", destroy_user_session_path, method: :delete, class: "btn btn-info btn btn-block" if user_signed_in? %>
