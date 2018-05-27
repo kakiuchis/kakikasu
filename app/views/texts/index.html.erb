@@ -2,14 +2,12 @@
   <%= image_tag("texts.png") %>
 </section>
 <section class="about">
-  <h2><b>上から順番に進めていきましょう</b></h2>
-  <p><b>テキストは少しづつ増やしていきますので、ゆっくり進めてくださいね</b></p>
+  <h1><b>上から順に進めていきましょう</b></h1>
+  <p><b>テキストは少しづつ増やしていきますので、ゆっくり進めてください</b></p>
 </section>
 <section class="menu">
-<% @texts.each do |text| %>
-  <%= link_to text.title, text, class: "btn btn-info btn btn-block" %>
-<!--   <%= link_to 'Edit', edit_text_path(text) %>
-  <%= link_to 'Destroy', text, method: :delete, data: { confirm: 'Are you sure?' } %> -->
-<% end %>
+  <% @texts.each do |text| %>
+    <%= link_to text.title, text, class: "btn btn-info btn btn-block" %>
+  <% end %>
+  <%= link_to 'New Text', new_text_path, class: "btn btn-success btn btn-block" if user_signed_in? && current_user.role == "admin" %>
 </section>
-<%= link_to 'New Text', new_text_path %>

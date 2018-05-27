@@ -10,5 +10,8 @@
   <%= slide(@text.slideshare_url) if @text.slideshare_url.present? %>
 </div>
 
-<%= link_to 'Edit', edit_text_path(@text) %> |
-<%= link_to 'Back', texts_path %>
+<section class="menu">
+  <%= link_to 'Edit', edit_text_path(@text), class: "btn btn-success btn btn-block" if user_signed_in? && current_user.role == "admin" %>
+  <%= link_to 'Destroy', @text, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn btn-block" if user_signed_in? && current_user.role == "admin" %>
+  <%= link_to 'テキスト一覧へ', texts_path, class: "btn btn-info btn btn-block" %>
+</section>
