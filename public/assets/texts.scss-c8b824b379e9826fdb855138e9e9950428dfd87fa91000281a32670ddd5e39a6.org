@@ -1,0 +1,53 @@
+// Place all the styles related to the Texts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$small:  "only screen and (max-width:640px)";
+
+p {
+  a{
+    img{
+      width: 560px;
+    }
+  }
+}
+
+@media #{$small} {
+  p {
+    a {
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .navbar-brand {
+    font-size: 10px;
+  }
+
+  .movie-wrap {
+    position: relative;
+    padding-bottom: 56.25%;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .slide-wrap {
+    position: relative;
+    padding-bottom: 85.53%;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
