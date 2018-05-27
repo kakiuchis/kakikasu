@@ -1,13 +1,32 @@
-<section class="main-header">
-  <%= image_tag("texts.png") %>
-</section>
-<section class="about">
-  <h1><b>上から順に進めていきましょう</b></h1>
-  <p><b>テキストは少しづつ増やしていきますので、ゆっくり進めてください</b></p>
-</section>
-<section class="menu">
-  <% @texts.each do |text| %>
-    <%= link_to text.title, text, class: "btn btn-info btn btn-block" %>
-  <% end %>
-  <%= link_to 'New Text', new_text_path, class: "btn btn-success btn btn-block" if user_signed_in? && current_user.role == "admin" %>
-</section>
+<div class="row">
+  <div class="col-xs-12 col-sm-offset-2 col-sm-8">
+    <div class="main-header">
+      <%= image_tag("texts.png") %>
+    </div>
+    <div class="content">
+      <div class="about">
+        <h1>テキスト一覧</h1>
+        <p>テキストは少しづつ増やしていきますので、ゆっくり進めてください</p>
+      </div>
+      <div class="panel panel-default">
+        <ul class="list-group">
+          <% @texts.each do |text| %>
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col-xs-2">
+                  <%= status_label(text) %>
+                </div>
+                <div class="col-xs-10 text-left">
+                  <b><%= link_to text.title, text %></b>
+                </div>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="menu">
+        <%= link_to 'New Text', new_text_path, class: "btn btn-success btn btn-block" if user_signed_in? && current_user.role == "admin" %>
+      </div>
+    </div>
+  </div>
+</div>
