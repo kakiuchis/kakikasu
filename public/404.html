@@ -1,67 +1,55 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>The page you were looking for doesn't exist (404)</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
-
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
-
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
-
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-  </style>
-</head>
-
-<body class="rails-default-error-page">
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
+  <head>
+    <title>カキカスエラーページ(404)</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style>
+      body {
+        text-align: center;
+        background-size: cover;
+        background-image: image-url("https://kakikasu.herokuapp.com/images/background.png");
+        background-attachment: fixed;
+      }
+      .error {
+        padding-top: 15%;
+      }
+      .to_inquiry {
+        padding-top: 15%;
+      }
+    　　.btn {
+        display: block;
+        width: 50%;
+        color: #fff;
+        background-color: #5bc0de;
+        border-color: #46b8da;
+        display: inline-block;
+        padding: 6px 12px;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 1.42857143;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-image: none;
+        border: 1px solid transparent;
+        border-radius: 4px;
+    　　}
+    </style>
+  </head>
+  <body>
+    <div class="error">
+      <img src="https://kakikasu.herokuapp.com/images/404.png">
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
-  </div>
-</body>
+    <div class="to_inquiry">
+      <a class="btn" href="https://kakikasu.herokuapp.com/inquiries/new">カッキーに連絡</a>
+  　　</div>
+  </body>
 </html>
