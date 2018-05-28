@@ -7,41 +7,25 @@
       body {
         text-align: center;
         background-size: cover;
-        background-image: image-url("https://kakikasu.herokuapp.com/images/background.png");
+        background-image: url("https://kakikasu.herokuapp.com/images/background.png");
         background-attachment: fixed;
       }
       .error {
-        padding-top: 15%;
+        padding: 17% 10% 10% 10%;
+      }
+      .img {
+        width: 100%;
       }
       .to_inquiry {
         padding-top: 15%;
       }
-    　　.btn {
-        display: block;
-        width: 50%;
+    　　.button {
+        background-color: #333;
         color: #fff;
-        background-color: #5bc0de;
-        border-color: #46b8da;
-        display: inline-block;
-        padding: 6px 12px;
-        margin-bottom: 0;
-        font-size: 14px;
-        font-weight: normal;
-        line-height: 1.42857143;
-        text-align: center;
-        white-space: nowrap;
-        vertical-align: middle;
-        -ms-touch-action: manipulation;
-        touch-action: manipulation;
-        cursor: pointer;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        background-image: none;
-        border: 1px solid transparent;
-        border-radius: 4px;
-    　　}
+      }
+      .button:hover {
+        background-color: #59b1eb;
+      }
     </style>
   </head>
   <body>
@@ -49,7 +33,7 @@
       <img src="https://kakikasu.herokuapp.com/images/404.png">
     </div>
     <div class="to_inquiry">
-      <a class="btn" href="https://kakikasu.herokuapp.com/inquiries/new">カッキーに連絡</a>
+      <a class="button" href="https://kakikasu.herokuapp.com/inquiries/new">カッキーに連絡</a>
   　　</div>
   </body>
 </html>
