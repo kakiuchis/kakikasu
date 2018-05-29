@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>We're sorry, but something went wrong (500)</title>
+  <title>カキカスエラーページ(500)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
   .rails-default-error-page {
-    background-color: #EFEFEF;
     color: #2E2F30;
     text-align: center;
     font-family: arial, sans-serif;
@@ -15,7 +14,7 @@
   .rails-default-error-page div.dialog {
     width: 95%;
     max-width: 33em;
-    margin: 4em auto 0;
+    margin: 2em auto 0;
   }
 
   .rails-default-error-page div.dialog > div {
@@ -51,16 +50,32 @@
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }
+
+  body {
+    text-align: center;
+    background-size: cover;
+    background-image: url("https://kakikasu.herokuapp.com/images/background.png");
+    background-attachment: fixed;
+  }
+  .main-header {
+    margin-top: 10%;
+  }
+  img {
+    width: 95%;
+  }
   </style>
 </head>
-
-<body class="rails-default-error-page">
-  <!-- This file lives in public/500.html -->
-  <div class="dialog">
-    <div>
-      <h1>We're sorry, but something went wrong.</h1>
+<body>
+  <div class="main-header">
+    <img src="https://kakikasu.herokuapp.com/images/500.png">
+  </div>
+  <div class="rails-default-error-page">
+    <div class="dialog">
+      <div>
+        <h1>エラーが発生しました</br>(500)</h1>
+      </div>
+      <p><a href="https://kakikasu.herokuapp.com/inquiries/new">管理者</a>へお問い合わせください</p>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
   </div>
 </body>
 </html>
