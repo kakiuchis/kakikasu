@@ -1,0 +1,22 @@
+ja:
+  activerecord:
+    models:
+      text: "テキスト"
+      inquiry: "お問い合わせ"
+      user: "ユーザ"
+    attributes:
+      text:
+        title: "タイトル"
+        content: "内容"
+      inquiry:
+        email: "email"
+        content: "内容"
+      user:
+        title: "タイトル"
+        name: "名前"
+        email: "email"
+        content: "内容"
+        current_password: "現在のpassword"
+        password: "password"
+        password_confirmation: "確認用password"
+        remember_me: "ログインを記憶"
