@@ -18,6 +18,11 @@ gem 'devise'
 gem 'cancancan'
 gem 'rails_admin'
 gem 'dotenv-rails'
+gem 'omniauth'
+# gem 'omniauth-facebook'
+gem 'omniauth-github'
+gem 'omniauth-google-oauth2'
+# gem 'omniauth-twitter'
 
 
 group :development, :test do
