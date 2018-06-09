@@ -3,20 +3,23 @@
   	<div class="content">
   	  <div class="text_title">
         <h1><%= @text.title %></h1>
-
       </div>
 
-      <div class="movie-wrap">
-        <%= movie(@text.youtube_code) if @text.youtube_code.present? %>
-      </div>
+      <% if @text.youtube_code.present? %>
+        <div class="movie-wrap">
+          <%= movie(@text.youtube_code) %>
+        </div>
+      <% end %>
 
       <div class="text_content">
         <%= markdown(@text.content) %>
       </div>
 
-      <div class="slide-wrap">
-        <%= slide(@text.slideshare_url) if @text.slideshare_url.present? %>
-      </div>
+      <% if @text.slideshare_url.present? %>
+        <div class="slide-wrap">
+          <%= slide(@text.slideshare_url) %>
+        </div>
+      <% end %>
 
       <div class="menu">
         <%= link_to 'Edit', edit_text_path(@text), class: "btn btn-success btn btn-block" if user_signed_in? && current_user.role == "admin" %>

@@ -11,24 +11,24 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :title %>
-    <%= form.text_field :title, id: :text_title %>
+    <%= form.text_field :title, id: :text_title, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :content %>
-    <%= form.text_area :content, id: :text_content %>
+    <%= form.text_area :content, id: :text_content, rows: "30", class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :youtube_code %>
-    <%= form.text_field :youtube_code, id: :text_youtube_code %>
+    <%= form.text_field :youtube_code, id: :text_youtube_code, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :slideshare_url %>
-    <%= form.text_field :slideshare_url, id: :text_slideshare_url %>
+    <%= form.text_field :slideshare_url, id: :text_slideshare_url, class: "form-control" %>
   </div>
 
   <div class="actions">

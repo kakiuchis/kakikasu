@@ -4,7 +4,7 @@ class TextsController < ApplicationController
 
   # GET /texts
   def index
-    @texts = Text.all
+    @texts = Text.order(:title)
   end
 
   # GET /texts/1
