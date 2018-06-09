@@ -13,18 +13,24 @@
         <% end %>
 
         <div class="form-group">
-          <%= f.label :email %>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "あなたのメールアドレス" %>
+          <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "あなたのメールアドレス" %>
         </div>
 
-        <div class="menu">
+        <div class="form-group">
           <%= f.submit "再発行する", class: "btn btn-success btn btn-block" %>
-          <hr>
         </div>
       <% end %>
+      <div class="or-container">
+        <hr class="or-hr">
+        <div class="or">または</div>
+      </div>
       <div class="menu">
-      	<%= render "devise/shared/links" %>
         <%= link_to "テキスト一覧へ", texts_path, class: "btn btn-info btn btn-block" %>
+        <%= link_to "カッキーに質問", new_inquiry_path, class: "btn btn-info btn btn-block" %>
+        <%= link_to "TOPへ", root_path, class: "btn btn-info btn btn-block" %>
+        <%= link_to 'ログイン', new_user_session_path, class: "btn btn-info btn btn-block" unless user_signed_in? %>
+        <%= link_to 'ユーザ一覧', users_index_path, class: "btn btn-info btn btn-block" if user_signed_in? && current_user.role == "admin" %>
+        <%= link_to 'メール配信', announcements_path, class: "btn btn-info btn btn-block" if user_signed_in? && current_user.role == "admin" %>
       </div>
     </div>
   </div>

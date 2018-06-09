@@ -1,0 +1,19 @@
+.or-container {
+  margin-bottom: 10px;
+  clear: both;
+  color: #6a737c;
+
+  .or-hr {
+    margin: 0px 5px 0px 5px;
+    position: relative;
+    top: 19px;
+    border-top: 1px solid #e4e6e8;
+  }
+
+  .or {
+    display: inline-block;
+    position: relative;
+    padding: 10px;
+    background-color: #FFF;
+  }
+}

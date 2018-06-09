@@ -2,7 +2,7 @@
   <div class="col-xs-12 col-sm-offset-2 col-sm-8">
     <div class="content">
       <div class="discription">
-        <h1>確認メール再送</h1>
+        <h1>登録確認メール再送</h1>
       </div>
       <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
         <% if resource.errors.present? %>
@@ -13,18 +13,24 @@
         <% end %>
 
         <div class="form-group">
-          <%= f.label :email %>
           <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: "form-control", placeholder: "あなたのメールアドレス" %>
         </div>
 
-        <div class="menu">
+        <div class="form-group">
           <%= f.submit "再送する", class: "btn btn-success btn btn-block" %>
-          <hr>
         </div>
       <% end %>
+      <div class="or-container">
+        <hr class="or-hr">
+        <div class="or">または</div>
+      </div>
       <div class="menu">
-      	<%= render "devise/shared/links" %>
         <%= link_to "テキスト一覧へ", texts_path, class: "btn btn-info btn btn-block" %>
+        <%= link_to "カッキーに質問", new_inquiry_path, class: "btn btn-info btn btn-block" %>
+        <%= link_to "TOPへ", root_path, class: "btn btn-info btn btn-block" %>
+        <%= link_to 'ログイン', new_user_session_path, class: "btn btn-info btn btn-block" unless user_signed_in? %>
+        <%= link_to 'ユーザ一覧', users_index_path, class: "btn btn-info btn btn-block" if user_signed_in? && current_user.role == "admin" %>
+        <%= link_to 'メール配信', announcements_path, class: "btn btn-info btn btn-block" if user_signed_in? && current_user.role == "admin" %>
       </div>
     </div>
   </div>

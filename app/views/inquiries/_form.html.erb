@@ -14,16 +14,14 @@
   <% end %>
 
   <div class="form-group">
-    <%= form.label :email %>
     <%= form.text_field :email, id: :inquiry_email, class: "form-control", placeholder: "あなたのメールアドレス" %>
   </div>
 
   <div class="form-group">
-    <%= form.label :content %>
     <%= form.text_area :content, id: :inquiry_content, class: "form-control", rows: "10", placeholder: "内容をご記入ください" %>
   </div>
   
-  <div class="menu">
+  <div class="form-group">
     <%= form.submit "送信", class: "btn btn-success btn btn-block" %>
   </div>
 <% end %>

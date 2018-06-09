@@ -6,20 +6,19 @@
     <div class="content">
       <div class="about">
         <h1>カキカスとは？</h1>
-        <p>「カッキーのカスでもできるAIプログラミング」の略です。</p>
-        <p>数学なんてわからない！難しいのいやだ！</br>そんなあなたでも、AIプログラミングできるようになるかもしれません！</p>
+        <p>今話題のAIを一点突破で勉強し、世間に対してドヤること（ドヤ顔で町を闊歩すること）を最終目的としています。</p>
+        <p>注意！プログラム未経験者向けサイトです。エンジニア向けではありません。</p>
+        <p>詳細は下記動画をご覧ください。</p>
       </div>
       <div class="movie-wrap">
         <%= movie("RBRXeo4GF4s") %>
       </div>
       <div class="menu">
-        <%= link_to 'Googleでサインアップしてね', user_google_omniauth_authorize_path %>
-        <%= link_to 'ログイン', new_user_session_path, class: "btn btn-info btn btn-block" unless user_signed_in? %>
         <%= link_to "テキスト一覧へ", texts_path, class: "btn btn-info btn btn-block" %>
-        <%= link_to "カッキーに問い合わせ", new_inquiry_path, class: "btn btn-info btn btn-block" %>
+        <%= link_to "カッキーに質問", new_inquiry_path, class: "btn btn-info btn btn-block" %>
+        <%= link_to 'ログイン', new_user_session_path, class: "btn btn-info btn btn-block" unless user_signed_in? %>
         <%= link_to 'ユーザ一覧', users_index_path, class: "btn btn-info btn btn-block" if user_signed_in? && current_user.role == "admin" %>
         <%= link_to 'メール配信', announcements_path, class: "btn btn-info btn btn-block" if user_signed_in? && current_user.role == "admin" %>
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-info btn btn-block" if user_signed_in? %>
       </div>
     </div>
   </div>

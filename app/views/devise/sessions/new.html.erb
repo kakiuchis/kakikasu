@@ -4,32 +4,48 @@
       <div class="discription">
         <h1>ログイン</h1>
       </div>
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-group">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "あなたのメールアドレス" %>
+          <%= link_to "Googleでログイン", user_google_omniauth_authorize_path, class: "btn btn-danger btn btn-block" %>
         </div>
-
         <div class="form-group">
-          <%= f.label :password %><br />
-          <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "パスワード" %>
+          <%= link_to "Githubでログイン", user_github_omniauth_authorize_path, class: "btn btn-default btn btn-block" %>
         </div>
-
-   <!-- <% if devise_mapping.rememberable? -%>
+        <div class="or-container">
+          <hr class="or-hr">
+          <div class="or">または</div>
+        </div>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-group">
-            <%= f.check_box :remember_me %>
-            <%= f.label :remember_me %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "あなたのメールアドレス" %>
           </div>
-        <% end -%> -->
 
-        <div class="menu">
-          <%= f.submit "ログイン", class: "btn btn-success btn btn-block" %>
-          <hr>
+          <div class="form-group">
+            <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "パスワード" %>
+            <%= link_to "パスワードを忘れた", new_password_path(resource_name) %>
+          </div>
+
+          <div class="form-group">
+            <%= f.submit "ログイン", class: "btn btn-success btn btn-block" %>
+          </div>
+        <% end %>
+        <div class="or-container">
+          <hr class="or-hr">
+          <div class="or">初めての方は</div>
         </div>
-      <% end %>
-      <div class="menu">
-        <%= render "devise/shared/links" %>
-        <%= link_to "テキスト一覧へ", texts_path, class: "btn btn-info btn btn-block" %>
+        <div class="form-group">
+          <%= link_to "新規登録", new_registration_path(resource_name), class: "btn btn-info btn btn-block" %>
+        </div>
+        <div class="or-container">
+          <hr class="or-hr">
+          <div class="or">または</div>
+        </div>
+        <div class="menu">
+          <%= link_to "テキスト一覧へ", texts_path, class: "btn btn-info btn btn-block" %>
+          <%= link_to "カッキーに質問", new_inquiry_path, class: "btn btn-info btn btn-block" %>
+          <%= link_to "TOPへ", root_path, class: "btn btn-info btn btn-block" %>
+          <%= link_to 'ユーザ一覧', users_index_path, class: "btn btn-info btn btn-block" if user_signed_in? && current_user.role == "admin" %>
+          <%= link_to 'メール配信', announcements_path, class: "btn btn-info btn btn-block" if user_signed_in? && current_user.role == "admin" %>
+        </div>
       </div>
     </div>
   </div>

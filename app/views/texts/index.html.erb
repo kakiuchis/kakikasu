@@ -6,7 +6,6 @@
     <div class="content">
       <div class="about">
         <h1>テキスト一覧</h1>
-        <p>テキストは少しづつ増やしていきますので、ゆっくり進めてください</p>
       </div>
       <div class="panel panel-default">
         <ul class="list-group">
@@ -26,6 +25,17 @@
       </div>
       <div class="menu">
         <%= link_to 'New Text', new_text_path, class: "btn btn-success btn btn-block" if user_signed_in? && current_user.role == "admin" %>
+      </div>
+      <div class="or-container">
+        <hr class="or-hr">
+        <div class="or">または</div>
+      </div>
+      <div class="menu">
+        <%= link_to "カッキーに質問", new_inquiry_path, class: "btn btn-info btn btn-block" %>
+        <%= link_to "TOPへ", root_path, class: "btn btn-info btn btn-block" %>
+        <%= link_to 'ログイン', new_user_session_path, class: "btn btn-info btn btn-block" unless user_signed_in? %>
+        <%= link_to 'ユーザ一覧', users_index_path, class: "btn btn-info btn btn-block" if user_signed_in? && current_user.role == "admin" %>
+        <%= link_to 'メール配信', announcements_path, class: "btn btn-info btn btn-block" if user_signed_in? && current_user.role == "admin" %>
       </div>
     </div>
   </div>

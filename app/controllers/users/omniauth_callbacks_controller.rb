@@ -6,7 +6,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       set_flash_message(:notice, :success, kind: "google") if is_navigational_format?
     else
       session['devise.google_data'] = request.env['omniauth.auth'].except("extra")
-      binding.pry
       if User.find_by(email: session['devise.google_data']['info']['email']).present?
         redirect_to new_user_session_path, notice: '同じアドレスですでに登録されているアカウントがあります'
       else

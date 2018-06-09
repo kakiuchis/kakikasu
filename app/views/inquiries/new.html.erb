@@ -2,13 +2,22 @@
   <div class="col-xs-12 col-sm-offset-2 col-sm-8">
     <div class="content">
       <div class="discription">
-        <h1>カッキーに問い合わせ</h1>
-        <p>テキストの質問、修正依頼など、ご連絡お待ちしております。</p>
-        <p>講演依頼なども承ります！</p>
+        <h1>カッキーに質問</h1>
+        <p>テキストの質問や追加してほしいコンテンツなど、ご連絡お待ちしております。</p>
+        <p>その他、講演依頼なども承ります！</p>
       </div>
       <%= render 'form', inquiry: @inquiry %>
+      <div class="or-container">
+        <hr class="or-hr">
+        <div class="or">または</div>
+      </div>
       <div class="menu">
         <%= link_to "テキスト一覧へ", texts_path, class: "btn btn-info btn btn-block" %>
+        <%= link_to "カッキーに質問", new_inquiry_path, class: "btn btn-info btn btn-block" %>
+        <%= link_to "TOPへ", root_path, class: "btn btn-info btn btn-block" %>
+        <%= link_to 'ログイン', new_user_session_path, class: "btn btn-info btn btn-block" unless user_signed_in? %>
+        <%= link_to 'ユーザ一覧', users_index_path, class: "btn btn-info btn btn-block" if user_signed_in? && current_user.role == "admin" %>
+        <%= link_to 'メール配信', announcements_path, class: "btn btn-info btn btn-block" if user_signed_in? && current_user.role == "admin" %>
       </div>
     </div>
   </div>

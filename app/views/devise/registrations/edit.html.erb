@@ -4,50 +4,90 @@
       <div class="discription">
         <h1>マイページ</h1>
       </div>
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-        <% if resource.errors.present? %>
-          <div class="alert alert-danger" role="alert">
-            <a class="close" data-dismiss="alert">×</a>
-            <%= devise_error_messages! %>
-          </div>
-        <% end %>
-
-        <div class="form-group">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "あなたのメールアドレス" %>
+      <% if @user.provider.present? %>
+        登録アカウント：<%= @user.provider %></br>
+        登録メールアドレス：<%= @user.email %>
+      <% else %>
+        登録メールアドレス：<%= @user.email %>
+        <div class="or-container">
+          <hr class="or-hr">
+          <div class="or">メールアドレスを変更</div>
         </div>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+          <% if resource.errors.present? %>
+            <div class="alert alert-danger" role="alert">
+              <a class="close" data-dismiss="alert">×</a>
+              <%= devise_error_messages! %>
+            </div>
+          <% end %>
 
-        <% if @user.provider.blank? %>
+          <div class="form-group">
+            <%= f.email_field :email, autofocus: true, autocomplete: "off", class: "form-control", placeholder: "変更後メールアドレス" %>
+          </div>
+
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
           <% end %>
 
           <div class="form-group">
-            <%= f.label :password %>
+            <%= f.password_field :current_password, autocomplete: "off", class: "form-control", placeholder: "現在のパスワード" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.submit "メールアドレスを変更", class: "btn btn-success btn btn-block" %>
+          </div>
+        <% end %>
+        <div class="or-container">
+          <hr class="or-hr">
+          <div class="or">パスワードを変更</div>
+        </div>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+          <% if resource.errors.present? %>
+            <div class="alert alert-danger" role="alert">
+              <a class="close" data-dismiss="alert">×</a>
+              <%= devise_error_messages! %>
+            </div>
+          <% end %>
+
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+          <% end %>
+
+          <div class="form-group">
             <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "変更後パスワード（6文字以上）" %>
           </div>
 
           <div class="form-group">
-            <%= f.label :password_confirmation %>
             <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "確認用変更後パスワード" %>
           </div>
 
           <div class="form-group">
-            <%= f.label :current_password %>
             <%= f.password_field :current_password, autocomplete: "off", class: "form-control", placeholder: "現在のパスワード" %>
           </div>
-        <% end %>
 
-        <div class="menu">
-          <%= f.submit "変更する", class: "btn btn-success btn btn-block" %>
-          <hr>
-        </div>
+          <div class="form-group">
+            <%= f.submit "変更する", class: "btn btn-success btn btn-block" %>
+          </div>
+        <% end %>
       <% end %>
-      <div class="menu">
+      <div class="or-container">
+        <hr class="or-hr">
+        <div class="or">残念ですが</div>
+      </div>
+      <div class="form-group">
         <%= button_to "退会する", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger btn btn-block" %>
-        <hr>
-        <%= render "devise/shared/links" %>
+      </div>
+      <div class="or-container">
+        <hr class="or-hr">
+        <div class="or">または</div>
+      </div>
+      <div class="menu">
         <%= link_to "テキスト一覧へ", texts_path, class: "btn btn-info btn btn-block" %>
+        <%= link_to "カッキーに質問", new_inquiry_path, class: "btn btn-info btn btn-block" %>
+        <%= link_to "TOPへ", root_path, class: "btn btn-info btn btn-block" %>
+        <%= link_to 'ログイン', new_user_session_path, class: "btn btn-info btn btn-block" unless user_signed_in? %>
+        <%= link_to 'ユーザ一覧', users_index_path, class: "btn btn-info btn btn-block" if user_signed_in? && current_user.role == "admin" %>
+        <%= link_to 'メール配信', announcements_path, class: "btn btn-info btn btn-block" if user_signed_in? && current_user.role == "admin" %>
       </div>
     </div>
   </div>
