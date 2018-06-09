@@ -30,7 +30,7 @@ class InquiriesController < ApplicationController
 
     if @inquiry.save
       NoticeMailer.sendmail_inquiry(@inquiry).deliver
-      redirect_to texts_path, notice: 'Inquiry was successfully created.'
+      redirect_to texts_path, notice: '質問が送信されました。'
     else
       render :new
     end
